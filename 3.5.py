@@ -7,15 +7,13 @@
 # полученной ранее сумме и после этого завершить программу.
 
 def summa():
-    numbers = []
     total = 0
     try:
-        while True:
-            numbers = map(int, input("Введите число. Если хотите выйти - введите Q: ").split(' '))
-            total = total + sum(numbers)
+        while total != 'Q':
+            for i in map(int, input("Введите число. Если хотите выйти - введите Q: ").split()):
+                total += i
             print(f'Сумма введенных элементов: {total}')
     except ValueError:
-        total = total + sum(numbers)
         print(f'Вы вышли из программы. Сумма введенных элементов: {total}')
 
 print(summa())
